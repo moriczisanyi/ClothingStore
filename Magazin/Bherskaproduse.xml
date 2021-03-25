@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Magazin>
+                        
+    
+    
+        
+    
+    
+        
+    
+    
+    
+            
+    
+    
+    
+            
+
+
+
+    <Produs>
+        <nume>Hanorac femei violet</nume>
+        <producator>Zara</producator>
+        <pret>35.0</pret>
+        <disponibilitate>40</disponibilitate>
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\HanoracFemeiPurple.jfif</imagine>
+    </Produs>
+</Magazin>

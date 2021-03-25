@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Magazin>
+            
+    
+    <Angajat>
+                        
+        
+        <nume>user</nume>
+                        
+        
+        <username>user</username>
+                        
+        
+        <parola>user</parola>
+                        
+        
+        <varsta>20</varsta>
+                    
+    
+    </Angajat>
+        
+
+    <Angajat>
+        <nume>Moriczi</nume>
+        <username>ilon</username>
+        <parola>ilon</parola>
+        <varsta>46</varsta>
+    </Angajat>
+</Magazin>
