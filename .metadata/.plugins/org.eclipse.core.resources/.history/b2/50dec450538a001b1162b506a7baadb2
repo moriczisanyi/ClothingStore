@@ -1,0 +1,26 @@
+import View.GUIAutentificare;
+
+import java.io.IOException;
+
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;
+import org.xml.sax.*;
+
+import Model.Angajat;
+import Model.AngajatPersistenta;
+import Model.Magazin;
+
+import org.w3c.dom.*;
+public class App {
+
+	public static void main(String[] args) throws SAXException, IOException {
+		//new GUIAutentificare();
+		AngajatPersistenta ang= new AngajatPersistenta();
+		Angajat a = new Angajat("Alex","Alex13","passwa",21);
+		Magazin m = new Magazin("H&M");
+		ang.salvare(a, m);
+	}
+
+}

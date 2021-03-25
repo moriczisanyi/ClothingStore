@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Magazin>
+                                                                                
+    
+    
+    
+    
+        
+    
+    
+            
+    
+    
+    
+            
+    
+    
+    
+    
+                
+    
+    
+    
+    
+                
+
+
+
+
+    
+    
+    
+        
+    
+    
+    
+    
+                
+
+
+    
+    
+    
+        
+
+    
+    
+    
+    
+    
+    
+    
+    <Produs>
+                                                                
+        
+        
+        
+        
+        
+        
+        <nume>Tricou barbati</nume>
+                                                                
+        
+        
+        
+        
+        
+        
+        <producator>Nike</producator>
+                                                                
+        
+        
+        
+        
+        
+        
+        <pret>25.0</pret>
+                                                                
+        
+        
+        
+        
+        
+        
+        <disponibilitate>20</disponibilitate>
+                                                                
+        
+        
+        
+        
+        
+        
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\TshirtNike.jpg</imagine>
+                                                            
+    
+    
+    
+    
+    
+    
+    </Produs>
+                            
+
+    
+    
+    
+    
+    
+    <Produs>
+                                                
+        
+        
+        
+        
+        <nume>Tricou barbati alb</nume>
+                                                
+        
+        
+        
+        
+        <producator>Puma</producator>
+                                                
+        
+        
+        
+        
+        <pret>30.0</pret>
+                                                
+        
+        
+        
+        
+        <disponibilitate>15</disponibilitate>
+                                                
+        
+        
+        
+        
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\TshirtWhitePuma.jfif</imagine>
+                                            
+    
+    
+    
+    
+    </Produs>
+                        
+    
+    
+    
+    
+    <Produs>
+                                                
+        
+        
+        
+        
+        <nume>Tricou barbati negru</nume>
+                                                
+        
+        
+        
+        
+        <producator>Puma</producator>
+                                                
+        
+        
+        
+        
+        <pret>25.0</pret>
+                                                
+        
+        
+        
+        
+        <disponibilitate>5</disponibilitate>
+                                                
+        
+        
+        
+        
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\TshirtPuma.png</imagine>
+                                            
+    
+    
+    
+    
+    </Produs>
+                        
+    
+    
+    
+    
+    <Produs>
+                                                
+        
+        
+        
+        
+        <nume>Tricou barbati negru</nume>
+                                                
+        
+        
+        
+        
+        <producator>Zara</producator>
+                                                
+        
+        
+        
+        
+        <pret>15.0</pret>
+                                                
+        
+        
+        
+        
+        <disponibilitate>20</disponibilitate>
+                                                
+        
+        
+        
+        
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\Tshirt.png</imagine>
+                                            
+    
+    
+    
+    
+    </Produs>
+                    
+
+    
+    
+    
+    <Produs>
+                                
+        
+        
+        <nume>Tricou femei roz</nume>
+                                
+        
+        
+        <producator>Nike</producator>
+                                
+        
+        
+        <pret>24.0</pret>
+                                
+        
+        
+        <disponibilitate>15</disponibilitate>
+                                
+        
+        
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\TshirtPinkWoman.jpg</imagine>
+                            
+    
+    
+    </Produs>
+            
+
+
+    <Produs>
+        <nume>Hanorac femei</nume>
+        <producator>Zara</producator>
+        <pret>25.0</pret>
+        <disponibilitate>20</disponibilitate>
+        <imagine>F:\Facultate_AN3SEM2\PS\Eclipse Work\Magazin\Images\HanoracFemeiPurple.jfif</imagine>
+    </Produs>
+</Magazin>

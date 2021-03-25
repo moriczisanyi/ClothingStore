@@ -1,0 +1,31 @@
+package Presenter;
+
+import View.IAdminView;
+
+public class PAdmin {
+	private IAdminView admin;
+	
+	public PAdmin(IAdminView admin)
+	{
+		this.admin=admin;
+	}
+	
+	
+	public void Adaugare()
+	{
+		
+	}
+	
+	public void Stergere()
+	{
+		
+	}
+	public void Actualizare()
+	{
+		
+	}
+	public void Logout()
+	{
+		
+	}
+}

@@ -1,0 +1,55 @@
+package Presenter;
+
+import Model.Angajat;
+import Model.AngajatPersistenta;
+import Model.Magazin;
+import Model.Produs;
+import Model.ProdusPersistenta;
+import View.GUIAutentificare;
+import View.IAngajatView;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+public class PAngajat {
+	private IAngajatView angajat_v;
+	public PAngajat(IAngajatView ang)
+	{
+		this.angajat_v=ang;
+	}
+	
+	
+	
+	
+	public void Logout()
+	{
+		new GUIAutentificare();
+	}
+	public ArrayList<String> accesListaAngajati(String magazin)
+	{
+		ProdusPersistenta angPers = new ProdusPersistenta();
+		return angPers.accesListaProduse(magazin);
+	}
+	public boolean adaugare()
+	{
+		String numeProdus=angajat_v.numeText();
+		String producator=angajat_v.producatorText();
+		String pret=angajat_v.pretText();
+		String disponibilitate=angajat_v.disponibilitateText();
+		String numeMagazin=angajat_v.numeMagazinText();
+		if(numeProdus.contentEquals("") || producator.contentEquals("") || pret.contentEquals("") || disponibilitate.contentEquals(""))
+		{
+			return false;
+		}
+
+		ProdusPersistenta prodPers= new ProdusPersistenta();
+		Produs produs= new Produs(numeProdus,producator,Double.parseDouble(pret),Integer.parseInt(disponibilitate));
+		try {
+			prodPers.salvare(produs, numeMagazin);
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+}

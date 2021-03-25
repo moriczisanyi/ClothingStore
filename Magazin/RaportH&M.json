@@ -1,0 +1,44 @@
+[
+     {"Produs": {
+          "pret": 25,
+          "nume": "Tricou barbati",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\TshirtNike.jpg",
+          "producator": "Nike",
+          "disponibilitate": 20
+     }},
+     {"Produs": {
+          "pret": 30,
+          "nume": "Tricou barbati alb",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\TshirtWhitePuma.jfif",
+          "producator": "Puma",
+          "disponibilitate": 15
+     }},
+     {"Produs": {
+          "pret": 25,
+          "nume": "Tricou barbati negru",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\TshirtPuma.png",
+          "producator": "Puma",
+          "disponibilitate": 5
+     }},
+     {"Produs": {
+          "pret": 15,
+          "nume": "Tricou barbati negru",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\Tshirt.png",
+          "producator": "Zara",
+          "disponibilitate": 20
+     }},
+     {"Produs": {
+          "pret": 24,
+          "nume": "Tricou femei roz",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\TshirtPinkWoman.jpg",
+          "producator": "Nike",
+          "disponibilitate": 15
+     }},
+     {"Produs": {
+          "pret": 25,
+          "nume": "Hanorac femei",
+          "cale imagine": "F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\HanoracFemeiPurple.jfif",
+          "producator": "Zara",
+          "disponibilitate": 20
+     }}
+]

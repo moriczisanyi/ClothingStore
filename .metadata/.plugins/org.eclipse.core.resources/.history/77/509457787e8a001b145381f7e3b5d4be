@@ -1,0 +1,40 @@
+package Presenter;
+
+import java.util.ArrayList;
+
+import Model.AngajatPersistenta;
+import View.GUIAutentificare;
+import View.IAdminView;
+
+public class PAdmin {
+	private IAdminView admin;
+	
+	public PAdmin(IAdminView admin)
+	{
+		this.admin=admin;
+	}
+	
+	
+	public void Adaugare()
+	{
+		
+	}
+	
+	public void Stergere()
+	{
+		
+	}
+	public void Actualizare()
+	{
+		
+	}
+	public ArrayList<String> accesListaAngajati(String magazin)
+	{
+		AngajatPersistenta angPers = new AngajatPersistenta();
+		return angPers.accesListaAngajati(magazin);
+	}
+	public void Logout()
+	{
+		new GUIAutentificare();
+	}
+}

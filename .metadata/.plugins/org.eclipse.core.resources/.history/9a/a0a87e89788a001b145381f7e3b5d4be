@@ -1,0 +1,39 @@
+package Presenter;
+import Model.AngajatPersistenta;
+import View.GUIAdmin;
+import View.GUIAngajat;
+import View.GUIAutentificare;
+import View.IAutentificareView;
+
+public class PAutentificare {
+	private IAutentificareView autentificare;
+	private AngajatPersistenta angajatP;
+	
+	public PAutentificare(GUIAutentificare autentificare)
+	{
+		this.autentificare=autentificare;
+	}
+	
+	public boolean Autentificare()
+	{
+		String username=autentificare.usernameText();
+		String parola=autentificare.parolaText();
+		String magazin=autentificare.boxMagazinSelected();
+		if(username.contentEquals("admin") && parola.contentEquals("admin"))
+		{
+
+			new GUIAdmin();
+			return true;
+		}
+		else
+			{
+				if(angajatP.accesDateAutentificare(username, parola, magazin))
+				{
+					System.out.println(username +" "+ parola + " " + magazin);
+					new GUIAngajat();
+					return true;
+				}
+				else return false;
+			}
+	}
+}

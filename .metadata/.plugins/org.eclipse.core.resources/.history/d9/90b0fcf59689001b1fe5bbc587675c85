@@ -1,0 +1,16 @@
+
+public class PAutentificare {
+	private IAutentificareView autentificare;
+	private GUIAutentificare aut;
+	
+	
+	public PAutentificare(GUIAutentificare aut)
+	{
+		this.aut=aut;
+	}
+	
+	public void Autentificare()
+	{
+		aut.autentificare_Click();
+	}
+}

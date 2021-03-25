@@ -1,0 +1,4 @@
+
+public interface IAutentificareView {
+	abstract void autentificare_Click();
+}

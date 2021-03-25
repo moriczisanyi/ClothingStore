@@ -1,0 +1,31 @@
+package Presenter;
+import GUIAdmin;
+import GUIAutentificare;
+import IAutentificareView;
+
+public class PAutentificare {
+	private IAutentificareView autentificare;
+	
+	
+	public PAutentificare(GUIAutentificare autentificare)
+	{
+		this.autentificare=autentificare;
+	}
+	
+	public boolean Autentificare()
+	{
+		String username=autentificare.usernameText();
+		String parola=autentificare.parolaText();
+		if(username.contentEquals("admin"))
+		{
+			if(parola.contentEquals("admin"))
+			{
+				System.out.println("szr");
+				new GUIAdmin();
+				return true;
+			}
+			else return false;
+		}
+		return false;
+	}
+}

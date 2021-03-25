@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Magazin>
+    <Angajat>
+        <nume>Mary</nume>
+        <username>mary97</username>
+        <parola>marypass</parola>
+        <varsta>24</varsta>
+    </Angajat>
+<Angajat><nume>user</nume><username>user</username><parola>user</parola><varsta>18</varsta></Angajat></Magazin>

@@ -1,0 +1,21 @@
+import java.io.File;
+import java.io.IOException;
+
+import view.GUIAutentificare;
+
+public class App {
+
+	public static void main(String[] args) {
+		//new GUIAutentificare();
+		File currentDirFile = new File(".");
+		String helper= currentDirFile.getAbsolutePath();
+		try {
+			String currentDir = helper.substring(0, helper.length() - currentDirFile.getCanonicalPath().length());
+			System.out.println(currentDir);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,6 @@
+package View;
+
+public interface IAutentificareView {
+	abstract String usernameText();
+	abstract String parolaText();
+}

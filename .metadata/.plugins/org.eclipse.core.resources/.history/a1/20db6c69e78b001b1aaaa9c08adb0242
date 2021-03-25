@@ -1,0 +1,29 @@
+package Presenter;
+
+import Model.AngajatPersistenta;
+import View.GUIAutentificare;
+import View.IAngajatView;
+
+import java.util.ArrayList;
+
+
+public class PAngajat {
+	private IAngajatView angajat_v;
+	public PAngajat(IAngajatView ang)
+	{
+		this.angajat_v=ang;
+	}
+	
+	
+	
+	
+	public void Logout()
+	{
+		new GUIAutentificare();
+	}
+	public ArrayList<String> accesListaAngajati(String magazin)
+	{
+		AngajatPersistenta angPers = new AngajatPersistenta();
+		return angPers.accesListaAngajati(magazin);
+	}
+}

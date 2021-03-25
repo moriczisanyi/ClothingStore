@@ -1,0 +1,10 @@
+import View.GUIAutentificare;
+
+public class App {
+
+	public static void main(String[] args) {
+		new GUIAutentificare();
+		System.out.println("aszr");
+	}
+
+}

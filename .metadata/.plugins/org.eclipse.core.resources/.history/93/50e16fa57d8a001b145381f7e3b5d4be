@@ -1,0 +1,8 @@
+package View;
+
+public interface IAdminView {
+	abstract String numeText();
+	abstract String usernameText();
+	abstract String parolaText();
+	abstract String varstaText();
+}

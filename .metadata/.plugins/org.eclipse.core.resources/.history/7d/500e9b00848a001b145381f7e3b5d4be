@@ -1,0 +1,54 @@
+package Presenter;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import Model.Angajat;
+import Model.AngajatPersistenta;
+import Model.Magazin;
+import View.GUIAutentificare;
+import View.IAdminView;
+
+public class PAdmin {
+	private IAdminView admin;
+	
+	public PAdmin(IAdminView admin)
+	{
+		this.admin=admin;
+	}
+	
+	
+	public void Adaugare()
+	{
+		String username=admin.usernameText();
+		String parola=admin.parolaText();
+		String nume=admin.numeText();
+		String varsta= admin.varstaText();
+		String numeMagazin= admin.boxMagazinText();
+		AngajatPersistenta angPers = new AngajatPersistenta();
+		Angajat angajat= new Angajat(nume,username,parola,Integer.parseInt(varsta));
+		Magazin magazin= new Magazin(numeMagazin);
+		try {
+			angPers.salvare(angajat, magazin);
+		} catch (IOException e) {
+		}
+	}
+	
+	public void Stergere()
+	{
+		
+	}
+	public void Actualizare()
+	{
+		
+	}
+	public ArrayList<String> accesListaAngajati()
+	{
+		AngajatPersistenta angPers = new AngajatPersistenta();
+		return angPers.accesListaAngajati(admin.boxMagazinText());
+	}
+	public void Logout()
+	{
+		new GUIAutentificare();
+	}
+}

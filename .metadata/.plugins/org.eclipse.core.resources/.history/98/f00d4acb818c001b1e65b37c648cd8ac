@@ -1,0 +1,140 @@
+import javax.swing.*;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import java.awt.*;
+public class Demo {
+
+    JFrame frame = new JFrame("");
+    AutoCompleteDecorator decorator;
+    JComboBox combobox;
+
+    public Demo() {
+        combobox = new JComboBox(new Object[]{"","Ester", "Jordi",
+            "Jordina", "Jorge", "Sergi"});
+        AutoCompleteDecorator.decorate(combobox);
+        frame.setSize(400,400);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        frame.add(combobox);
+        frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+    }
+}
+/*
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class GUIAdmin {
+
+	protected JFrame frame;
+	protected JTextField txtNumeAngajat;
+	protected JTextField txtVarstaAngajat;
+	protected JButton btnAddAngajat;
+	protected JComboBox boxAngajat;
+	protected JButton btnStergeAngajat;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Admin window = new Admin();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Admin() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1044, 375);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblAdmin = new JLabel("Administrator");
+		lblAdmin.setBounds(361, 10, 288, 60);
+		panel.add(lblAdmin);
+		lblAdmin.setFont(new Font("Tahoma", Font.PLAIN, 49));
+		
+		JLabel lblNumeAngajat = new JLabel("Nume angajat:");
+		lblNumeAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNumeAngajat.setBounds(42, 90, 120, 46);
+		panel.add(lblNumeAngajat);
+		
+		txtNumeAngajat = new JTextField();
+		txtNumeAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtNumeAngajat.setBounds(208, 99, 162, 28);
+		panel.add(txtNumeAngajat);
+		txtNumeAngajat.setColumns(10);
+		
+		JLabel lblVarstaAngajat = new JLabel("Varsta angajat:");
+		lblVarstaAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblVarstaAngajat.setBounds(42, 146, 141, 46);
+		panel.add(lblVarstaAngajat);
+		
+		txtVarstaAngajat = new JTextField();
+		txtVarstaAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtVarstaAngajat.setColumns(10);
+		txtVarstaAngajat.setBounds(208, 155, 162, 28);
+		panel.add(txtVarstaAngajat);
+		
+		btnAddAngajat = new JButton("Adauga angajat");
+		btnAddAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAddAngajat.setBounds(42, 202, 195, 28);
+		panel.add(btnAddAngajat);
+		
+		JComboBox boxAngajat = new JComboBox();
+		boxAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		boxAngajat.setBounds(560, 103, 241, 21);
+		panel.add(boxAngajat);
+		boxAngajat.addItem("omul mare care este mic");
+		
+		JButton btnStergeAngajat = new JButton("Stergere angajat");
+		btnStergeAngajat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnStergeAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnStergeAngajat.setBounds(42, 240, 195, 28);
+		panel.add(btnStergeAngajat);
+		
+		JButton btnActualizareAngajat = new JButton("Actualizare angajat");
+		btnActualizareAngajat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnActualizareAngajat.setBounds(42, 278, 195, 28);
+		panel.add(btnActualizareAngajat);
+		
+		JLabel lblListaAngajati = new JLabel("Lista angajati:");
+		lblListaAngajati.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblListaAngajati.setBounds(430, 90, 120, 46);
+		panel.add(lblListaAngajati);
+		
+		JButton btnLogOut = new JButton("Log Out");
+		frame.getContentPane().add(btnLogOut, BorderLayout.NORTH);
+	}
+}
+*/

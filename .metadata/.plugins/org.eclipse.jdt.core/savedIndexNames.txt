@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+F:\Facultate_AN3SEM2\PS\Eclipse Work\.metadata\.plugins\org.eclipse.jdt.core
+1845803946.index
+3180045139.index
+524819999.index
+3884392732.index
+180578343.index
+3488951058.index

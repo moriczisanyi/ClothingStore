@@ -1,0 +1,12 @@
+package Presenter;
+
+import View.IAdminView;
+
+public class PAdmin {
+	private IAdminView admin;
+	
+	public PAdmin(IAdminView admin)
+	{
+		this.admin=admin;
+	}
+}

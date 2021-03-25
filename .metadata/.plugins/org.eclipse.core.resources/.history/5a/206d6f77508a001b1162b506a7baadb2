@@ -1,0 +1,32 @@
+package Model;
+
+import java.util.ArrayList;
+
+public class Magazin {
+	private ArrayList<Angajat> angajati;
+	private String nume;
+	//private ArrayList<Produs>
+
+	public Magazin(ArrayList<Angajat> angajati) {
+		this.angajati = angajati;
+	}
+
+	public ArrayList<Angajat> accesAngajati() {
+		return angajati;
+	}
+
+	public void setareAngajati(ArrayList<Angajat> angajati) {
+		this.angajati = angajati;
+	}
+
+	public String accesNume() {
+		return nume;
+	}
+
+	public void setareNume(String nume) {
+		this.nume = nume;
+	}
+	
+	
+	
+}

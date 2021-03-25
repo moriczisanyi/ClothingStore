@@ -1,0 +1,43 @@
+import View.GUIAngajat;
+import View.GUIAutentificare;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;
+import org.xml.sax.*;
+
+import Model.Angajat;
+import Model.AngajatPersistenta;
+import Model.Magazin;
+
+import org.w3c.dom.*;
+public class App {
+
+	public static void main(String[] args) throws SAXException, IOException {
+		//new GUIAngajat();
+		//new GUIAutentificare();
+		/*AngajatPersistenta ang= new AngajatPersistenta();
+		Angajat a = new Angajat("Alex","Alex13","passwa",21);
+		Angajat aNou = new Angajat("Alexandra","Alexandra13","passwa",21);
+		Angajat aNou2 = new Angajat("Bianca","BiaK","bianca",32);
+		Magazin m = new Magazin("H&K");
+		//ang.salvare(a, m);
+		//ang.stergere(a, m);
+		ang.actualizare(aNou, aNou2, m);*/
+		File f = new File("F:\\Facultate_AN3SEM2\\PS\\Eclipse Work\\Magazin\\Images\\Tshirt.png");
+		int lastSlash = f.toString().lastIndexOf("\\");
+		String temp = f.toString().substring(lastSlash,f.toString().length());
+		//for(int i=0;i<temp.length;i++)
+			System.out.println(temp);
+		//JFileChooser j = new JFileChooser(f, FileSystemView.getFileSystemView());
+		//j.showSaveDialog(null);
+		
+	}
+
+}

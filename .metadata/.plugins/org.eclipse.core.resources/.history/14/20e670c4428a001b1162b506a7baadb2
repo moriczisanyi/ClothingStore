@@ -1,0 +1,24 @@
+package Model;
+
+public class Angajat {
+	private String nume;
+	private String username;
+	private String parola;
+	private int varsta;
+	
+	public Angajat()
+	{
+		
+	}
+	public Angajat(String nume)
+	{
+		this.nume=nume;
+	}
+	public Angajat(Angajat angajat)
+	{
+		this.nume=angajat.nume;
+		this.parola=angajat.parola;
+		this.username=angajat.username;
+		this.varsta=angajat.varsta;
+	}
+}

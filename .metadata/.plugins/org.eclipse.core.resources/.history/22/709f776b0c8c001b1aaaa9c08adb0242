@@ -1,0 +1,167 @@
+package Model;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class ProdusPersistenta {
+	public String numeFisier;
+	
+	public ProdusPersistenta()
+	{
+		
+	}
+	
+	public ArrayList<String> accesListaProduse(String magazin)
+	{
+		this.numeFisier=magazin.concat("produse.xml");
+		ArrayList<String> listaProduse = new ArrayList<String>();
+		try {
+			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			Document document = documentBuilder.parse(numeFisier);
+			NodeList produse = document.getElementsByTagName("Produs");
+			
+			for (int i = 0; i < produse.getLength(); i++) {
+				Element prod = (Element) produse.item(i);
+				Element numeProdus = (Element) prod.getElementsByTagName("nume").item(0);
+				Element numeProducator = (Element) prod.getElementsByTagName("producator").item(0);
+				
+				listaProduse.add(numeProdus.getTextContent().concat("-").concat(numeProducator.getTextContent()));
+				
+			}
+			return listaProduse;
+
+		} catch (Exception e) {
+			
+			
+			listaProduse.add("");
+			return listaProduse;
+		}
+	}
+	
+	public boolean salvare(Produs produs, String magazin) throws  IOException
+
+	{
+		try {
+
+			this.numeFisier=magazin.concat("produse.xml");
+			File file = new File(numeFisier);
+			DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+
+			DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+
+			Document document;
+			Element root;
+			if(file.exists())
+			{
+				document = documentBuilder.parse(numeFisier);
+				root = document.getDocumentElement();
+			}
+			else
+			{
+				
+			
+			document = documentBuilder.newDocument();
+			root = document.createElement("Magazin");
+			document.appendChild(root);
+			}
+			
+			
+			ArrayList<Produs> produse = new ArrayList<Produs>();
+			produse.add(produs);
+
+			for (Produs prod : produse) {
+
+				Element angajatxml = document.createElement("Produs");
+
+				root.appendChild(angajatxml);
+
+				Element nume = document.createElement("nume");
+				nume.appendChild(document.createTextNode(prod.accesNume()));
+				angajatxml.appendChild(nume);
+
+				Element username = document.createElement("producator");
+				username.appendChild(document.createTextNode(prod.accesProducator()));
+				angajatxml.appendChild(username);
+
+				Element parola = document.createElement("pret");
+				parola.appendChild(document.createTextNode(Double.toString(prod.accesPret() ) ) );
+				angajatxml.appendChild(parola);
+
+				Element varsta = document.createElement("disponibilitate");
+				varsta.appendChild(document.createTextNode(Integer.toString(prod.accesDisponibilitate())));
+				angajatxml.appendChild(varsta);
+			}
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource domSource = new DOMSource(document);
+			StreamResult streamResult = new StreamResult(new File(numeFisier));
+
+
+			transformer.transform(domSource, streamResult);
+
+			System.out.println("Done creating XML File");
+			return true;
+
+		} catch (ParserConfigurationException pce) {
+			
+			pce.printStackTrace();
+			return false;
+		} catch (TransformerException tfe) {
+			tfe.printStackTrace();
+			return false;
+		} catch (SAXException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean stergere(Produs produs, Magazin magazin)
+	{
+		this.numeFisier=magazin.accesNume().concat("produse.xml");
+		try {
+			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			Document document = documentBuilder.parse(numeFisier);
+			NodeList produse = document.getElementsByTagName("Produs");
+			for (int i = 0; i < produse.getLength(); i++) {
+				Element prod = (Element) produse.item(i);
+				Element numeAngajat = (Element) prod.getElementsByTagName("nume").item(0);
+				Element producator = (Element) prod.getElementsByTagName("producator").item(0);
+				if (numeAngajat.getTextContent().equalsIgnoreCase(produs.accesNume()) && producator.getTextContent().equalsIgnoreCase(produs.accesProducator()) ) {
+					numeAngajat.getParentNode().getParentNode().removeChild(produse.item(i));
+					break;
+				}
+				
+
+			}
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			DOMSource domSource = new DOMSource(document);
+			StreamResult streamResult = new StreamResult(numeFisier);
+			transformer.transform(domSource, streamResult);
+			return true;
+		} catch (Exception e) {
+			
+			System.err.println(e.getMessage());
+			return false;
+		}
+	}
+}

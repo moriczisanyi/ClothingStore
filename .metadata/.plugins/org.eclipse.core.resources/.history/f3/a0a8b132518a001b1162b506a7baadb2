@@ -1,0 +1,112 @@
+package Model;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+
+public class AngajatPersistenta {
+	public String numeFisier;
+	
+	public AngajatPersistenta()
+	{
+		
+	}
+	public boolean salvare(Angajat angajat, Magazin magazin) throws  IOException
+	{
+		try {
+
+			this.numeFisier=magazin.accesNume().concat("angajati");
+			DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+
+			DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+
+			//Document document = documentBuilder.newDocument();
+			if(documentBuilder.parse(numeFisier)!=null)
+			{		
+			Document document = documentBuilder.parse(numeFisier);
+			Element root = document.getDocumentElement();
+			}
+			else
+			{
+			Document document = documentBuilder.newDocument();
+			Element root = document.createElement("Magazin");
+			document.appendChild(root);
+			}
+			
+			
+			// root element
+			ArrayList<Angajat> angajati = new ArrayList<Angajat>();
+			angajati.add(angajat);
+			//Angajat ang1 = new Angajat("Jhon", "Jhon12", "passw", 25);
+			//Angajat ang2 = new Angajat("Jhony", "Jhony12", "passw", 27);
+			//Element root = document.createElement("Magazin");
+			//document.appendChild(root);
+
+			// employee element
+			for (Angajat ang : angajati) {
+
+				Element angajatxml = document.createElement("Angajat");
+
+				root.appendChild(angajatxml);
+
+				// set an attribute to staff element
+				// Attr attr = document.createAttribute("id");
+				// attr.setValue("10");
+				// employee.setAttributeNode(attr);
+
+				// you can also use staff.setAttribute("id", "1") for this
+
+				// firstname element
+				Element firstName = document.createElement("nume");
+				firstName.appendChild(document.createTextNode(ang.accesNume()));
+				angajatxml.appendChild(firstName);
+
+				// lastname element
+				Element lastname = document.createElement("username");
+				lastname.appendChild(document.createTextNode(ang.accesUsername()));
+				angajatxml.appendChild(lastname);
+
+				// email element
+				Element email = document.createElement("parola");
+				email.appendChild(document.createTextNode(ang.accesParola()));
+				angajatxml.appendChild(email);
+
+				// department elements
+				Element department = document.createElement("varsta");
+				department.appendChild(document.createTextNode(Integer.toString(ang.accesVarsta())));
+				angajatxml.appendChild(department);
+			}
+			// create the xml file
+			// transform the DOM Object to an XML File
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource domSource = new DOMSource(document);
+			StreamResult streamResult = new StreamResult(new File(numeFisier));
+
+
+			transformer.transform(domSource, streamResult);
+
+			System.out.println("Done creating XML File");
+
+		} catch (ParserConfigurationException pce) {
+			pce.printStackTrace();
+		} catch (TransformerException tfe) {
+			tfe.printStackTrace();
+		}
+		return true;
+	}
+}

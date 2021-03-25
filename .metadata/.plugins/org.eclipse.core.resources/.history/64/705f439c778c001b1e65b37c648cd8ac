@@ -1,0 +1,10 @@
+package View;
+
+public interface IAngajatView {
+	abstract String numeText();
+	abstract String producatorText();
+	abstract String pretText();
+	abstract String disponibilitateText();
+	abstract String numeMagazinText();
+	abstract String boxProdusText();
+}
